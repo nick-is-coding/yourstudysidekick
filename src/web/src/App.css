@@ -1,0 +1,262 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #efead8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.circle {
+  background-color: white;
+  position: fixed;
+  width: 150vw;
+  right: -25%;
+  bottom: 30%;
+  height: 150vw;
+  transform: rotate(90deg);
+  border-radius: 154rem;
+  color: black;
+  z-index: -1;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Title */
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  color: #2a3b3d;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+}
+
+/* Person */
+
+.person-image img {
+  max-width: 300px;
+}
+
+/* Pom Timer */
+
+.pom-container {
+  margin: 14rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pomodoro-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #efead8;
+  height: 250px;
+  background: #b2675e;
+  width: 500px;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.timer-text {
+  font-size: 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 30px;
+}
+
+.timer-button,
+.todo-list__add-btn {
+  background-color: #b2675e;
+  color: #efead8;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.timer-button:hover,
+.todo-list__add-btn:hover {
+  background-color: #d0c9c0;
+}
+
+/* TodoWindow */
+
+.todo-list {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 300px;
+  height: 400px;
+  background-color: #efead8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.todo-list--collapsed {
+  height: 50px;
+}
+
+.todo-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  color: #fff;
+  background-color: #0a2342;
+}
+
+.todo-list__close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+.todo-list__content {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+.todo-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-list__item:last-child {
+  border-bottom: none;
+}
+
+.todo-list__remove-btn {
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #5f7161;
+}
+
+.todo-list__input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.todo-list__input {
+  flex: 1;
+  height: 30px;
+  padding: 5px;
+  margin-right: 10px;
+  border: none;
+  background-color: #fff;
+}
+
+.todo-list__add-btn {
+  height: 30px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .pomodoro-timer {
+    width: 300px;
+  }
+}
+
+/* bounce person */
+
+.person-image {
+  animation: bounce 0.9s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 200px, 0);
+  }
+}
+
+/* Prefix Support */
+
+.person-image {
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+}
