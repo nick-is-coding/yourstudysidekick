@@ -1,12 +1,12 @@
 import React from 'react';
-import Ghost from '../assets/ghost.png'
+import Face from '../assets/face1.png'
 
 
 const Person = () => {
 
   return (
     <div className='person-image'>
-      <img src={Ghost} alt="#"/>
+      <img src={Face} alt="#"/>
     </div>
   );
 

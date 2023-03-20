@@ -131,7 +131,7 @@
   right: 40px;
   width: 300px;
   height: 400px;
-  background-color: #efead8;
+  background-color: #b5b8b1;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -236,7 +236,7 @@
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 75px, 0);
   }
 }
 
@@ -244,9 +244,9 @@
 
 .person-image {
   -webkit-animation-name: bounce;
-  -webkit-animation-duration: 0.9s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  -webkit-animation-timing-function: cubic-bezier(1, 1, 1, 1);
   -webkit-animation-iteration-count: infinite;
 }
 
@@ -259,4 +259,67 @@
     -webkit-transform: translate3d(0, 200px, 0);
     transform: translate3d(0, 200px, 0);
   }
+}
+
+/* Add Button */
+
+.option-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+button.option-button {
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.option-button__menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 120px;
+  background-color: #5f7161;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  z-index: 2;
+}
+
+.option-button__option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option-button__option:hover {
+  background-color: #f5f5f5;
+}
+
+/* Note */
+.note {
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: #907474;
+  border-radius: 2rem;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px;
+}
+
+.note__text {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
 }

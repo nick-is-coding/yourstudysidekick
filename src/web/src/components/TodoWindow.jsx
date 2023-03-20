@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Draggable from "react-draggable";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -23,6 +24,7 @@ const TodoList = () => {
   };
 
   return (
+    <Draggable>
     <div className={`todo-list${collapsed ? " todo-list--collapsed" : ""}`}>
       <div className="todo-list__header">
         <h3 className="todo-list__title">Todo List</h3>
@@ -58,6 +60,7 @@ const TodoList = () => {
         </div>
       </div>
     </div>
+    </Draggable>
   );
 };
 
