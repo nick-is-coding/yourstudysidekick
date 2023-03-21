@@ -19,20 +19,20 @@ const OptionButton = () => {
 
   return (
     <div className="option-button">
-      <button onClick={() => setShowMenu(!showMenu)}>+</button>
+      <button className="option-add-button" onClick={() => setShowMenu(!showMenu)}>+</button>
       {showMenu && (
         <div className="option-button__menu">
           <div
             className="option-button__option"
             onClick={() => handleOptionClick("note")}
           >
-            Note
+            NOTE
           </div>
           <div
             className="option-button__option"
             onClick={() => handleOptionClick("todo")}
           >
-            Todo List
+            TODO LIST
           </div>
         </div>
       )}

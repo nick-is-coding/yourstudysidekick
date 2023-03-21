@@ -68,13 +68,13 @@
 /* Person */
 
 .person-image img {
-  max-width: 300px;
+  max-width: 400px;
 }
 
 /* Pom Timer */
 
 .pom-container {
-  margin: 14rem;
+  margin: 7rem;
   display: flex;
   justify-content: center;
 }
@@ -97,7 +97,7 @@
   font-size: 80px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: -5px;
 }
 
 .buttons-container {
@@ -216,12 +216,6 @@
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .pomodoro-timer {
-    width: 300px;
-  }
-}
-
 /* bounce person */
 
 .person-image {
@@ -265,10 +259,21 @@
 
 .option-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 45px;
+  right: 25px;
   display: flex;
   align-items: center;
+}
+
+.option-add-button {
+  border: none;
+  background: #b2675e;
+  color: #efead8;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 2rem;
+  height: 3vw;
+  width: 9vw;
 }
 
 button.option-button {
@@ -281,11 +286,13 @@ button.option-button {
 
 .option-button__menu {
   position: absolute;
-  top: 50px;
+  top: 65px;
   right: 0;
-  width: 120px;
+  width: 140px;
   background-color: #5f7161;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  color: #efead8;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   z-index: 2;
 }
 
@@ -322,4 +329,16 @@ button.option-button {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* Media Query */
+
+@media (max-width: 480px) {
+  .pomodoro-timer {
+    width: 300px;
+  }
+  .option-add-button {
+    height: 7vw;
+    width: 10vw;
+  }
 }
