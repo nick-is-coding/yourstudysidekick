@@ -106,24 +106,49 @@
 }
 
 .timer-button,
-.todo-list__add-btn {
-  background-color: #b2675e;
-  color: #efead8;
+.todo-list__add-btn,
+.main-todo-button,
+.main-note-button {
   border: none;
   border-radius: 5px;
-  padding: 15px 30px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+.timer-button,
+.todo-list__add-btn {
+  background-color: #b2675e;
+  color: #efead8;
+  padding: 15px 30px;
+}
+
 .timer-button:hover,
 .todo-list__add-btn:hover {
-  background-color: #d0c9c0;
+  background-color: #d09d97;
+}
+
+.main-todo-button:hover,
+.main-note-button:hover {
+  background-color: #d09d97;
+  color: #efead8;
+}
+
+.main-todo-button,
+.main-note-button {
+  background-color: #efead8;
+  color: #b2675e;
+  padding: 15px 16px;
 }
 
 /* TodoWindow */
+
+.todo-button {
+  position: relative;
+  bottom: 315px;
+  left: 180px;
+}
 
 .todo-list {
   position: fixed;
@@ -142,6 +167,10 @@
   height: 50px;
 }
 
+.todo-buttons {
+  display: flex;
+}
+
 .todo-list__header {
   display: flex;
   justify-content: space-between;
@@ -153,7 +182,7 @@
 }
 
 .todo-list__close-btn {
-  font-size: 24px;
+  font-size: 15px;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -230,7 +259,7 @@
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(0, 75px, 0);
+    transform: translate3d(0, 30px, 0);
   }
 }
 
@@ -255,57 +284,14 @@
   }
 }
 
-/* Add Button */
-
-.option-button {
-  position: absolute;
-  top: 45px;
-  right: 25px;
-  display: flex;
-  align-items: center;
-}
-
-.option-add-button {
-  border: none;
-  background: #b2675e;
-  color: #efead8;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 2rem;
-  height: 3vw;
-  width: 9vw;
-}
-
-button.option-button {
-  border: none;
-  background-color: transparent;
-  color: black;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.option-button__menu {
-  position: absolute;
-  top: 65px;
-  right: 0;
-  width: 140px;
-  background-color: #5f7161;
-  color: #efead8;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  z-index: 2;
-}
-
-.option-button__option {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.option-button__option:hover {
-  background-color: #f5f5f5;
-}
-
 /* Note */
+
+.note-button {
+  position: relative;
+  bottom: 262px;
+  right: 180px;
+}
+
 .note {
   position: absolute;
   top: 200px;
@@ -320,15 +306,31 @@ button.option-button {
 }
 
 .note__text {
-  width: 100%;
-  height: 100%;
+  width: 245px;
+  height: 80%;
   padding: 10px;
+  position: absolute;
+  top: 24px;
+  left: 20px;
   border: none;
   color: #fff;
   background-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
+}
+
+div.note textarea:focus {
+  outline: none;
+}
+
+div.note button.close-button {
+  background: none;
+  border: none;
+  color: white;
+  position: absolute;
+  left: 257px;
+  top: 18px;
 }
 
 /* Media Query */
@@ -336,6 +338,9 @@ button.option-button {
 @media (max-width: 480px) {
   .pomodoro-timer {
     width: 300px;
+  }
+  .circle {
+    bottom: 50%;
   }
   .option-add-button {
     height: 7vw;

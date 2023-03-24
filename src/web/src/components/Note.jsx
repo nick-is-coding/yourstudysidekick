@@ -1,17 +1,43 @@
 import React, { useState } from "react";
-import Draggable from "react-draggable";
-
+import { Rnd } from "react-rnd";
 
 const Note = () => {
   const [text, setText] = useState("");
+  const [showNote, setShowNote] = useState(false);
 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
+  const handleDeleteNote = () => {
+    setShowNote(false);
+  };
+
+  const handleAddNote = () => {
+    setShowNote(true);
+  }
+
   return (
-    <Draggable>
+    <div className="note-button">
+      <button 
+        className="main-note-button"
+        onClick={handleAddNote}
+      >
+        NOTE</button>
+    {showNote && (
+    <Rnd
+      default={{
+        x: 0,
+        y: -600,
+        width: 320,
+        height: 200,
+      }}
+    >
+      {" "}
       <div className="note">
+        <button className="close-button" onClick={handleDeleteNote}>
+          X
+        </button>
         <textarea
           className="note__text"
           placeholder="Write a note..."
@@ -19,8 +45,9 @@ const Note = () => {
           onChange={handleTextChange}
         />
       </div>
-    </Draggable>
-  );
-};
+    </Rnd>
+  )}
+</div>
+);}
 
 export default Note;
