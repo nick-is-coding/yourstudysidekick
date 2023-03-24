@@ -307,10 +307,10 @@
 
 .note__text {
   width: 245px;
-  height: 80%;
+  height: 70%;
   padding: 10px;
   position: absolute;
-  top: 24px;
+  top: 50px;
   left: 20px;
   border: none;
   color: #fff;

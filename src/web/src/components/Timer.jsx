@@ -1,21 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import BreakFace from '../assets/face2.png';
 import Face from '../assets/face01.png';
+import TimerSound from '../assets/timer-done.mp3';
+
 
 const Timer = ({ onComplete, setIsBreak, setImageSrc }) => {
   const [seconds, setSeconds] = useState(1500);
   const [isRunning, setIsRunning] = useState(false);
+  const hasPlayedSoundRef = useRef(false);
 
   useEffect(() => {
     let intervalId;
     if (isRunning && seconds > 0) {
       intervalId = setInterval(() => setSeconds(prevSeconds => prevSeconds - 1), 1000);
-    } else if (seconds === 0) {
+    } else if (seconds === 0 && !hasPlayedSoundRef.current) {
       clearInterval(intervalId);
       onComplete();
+      const audio = new Audio(TimerSound);
+      audio.play();
+      hasPlayedSoundRef.current = true;
+      audio.addEventListener('ended', () => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
     }
     return () => clearInterval(intervalId);
   }, [isRunning, seconds, onComplete]);
+
 
   const handleStartStop = () => {
     setIsRunning(prevIsRunning => !prevIsRunning);
@@ -26,6 +37,7 @@ const Timer = ({ onComplete, setIsBreak, setImageSrc }) => {
     setSeconds(1500);
     setIsBreak(false);
     setImageSrc(Face);
+    hasPlayedSoundRef.current = false;
   };
 
   const takeBreak = () => {
@@ -33,6 +45,7 @@ const Timer = ({ onComplete, setIsBreak, setImageSrc }) => {
     setSeconds(300);
     setIsBreak(true);
     setImageSrc(BreakFace);
+    hasPlayedSoundRef.current = false;
   }
 
   const formattedTime = new Date(seconds * 1000).toISOString().substr(14, 5);

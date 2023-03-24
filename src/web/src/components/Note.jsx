@@ -36,7 +36,7 @@ const Note = () => {
       {" "}
       <div className="note">
         <button className="close-button" onClick={handleDeleteNote}>
-          X
+        ╳
         </button>
         <textarea
           className="note__text"
