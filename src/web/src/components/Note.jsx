@@ -36,10 +36,10 @@ const Note = () => {
       {" "}
       <div className="note">
         <button className="close-button" onClick={handleDeleteNote}>
-        ╳
+          ╳
         </button>
         <textarea
-          className="note__text"
+          className="note-text"
           placeholder="Write a note..."
           value={text}
           onChange={handleTextChange}

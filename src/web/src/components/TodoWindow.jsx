@@ -48,26 +48,26 @@ const TodoList = () => {
           }}
         >
         <div className={`todo-list${collapsed ? " todo-list--collapsed" : ""}`}>
-          <div className="todo-list__header">
+          <div className="todo-list-header">
             <div className="todo-title">
-              <h3 className="todo-list__title">Todo List</h3>
+              <h3 className="todo-list-title">TODO LIST</h3>
             </div>
             <div className="todo-btns">
-              <button className="todo-list__close-btn" onClick={handleToggleCollapse}>
+              <button className="todo-list-close-btn" onClick={handleToggleCollapse}>
                 —
               </button>
-              <button className="todo-list__close-btn" onClick={handleDeleteWindow}>
+              <button className="todo-list-close-btn" onClick={handleDeleteWindow}>
                 ╳
               </button>
             </div>
           </div>
-          <div className="todo-list__content">
-            <ul className="todo-list__items">
+          <div className="todo-list-content">
+            <ul className="todo-list-items">
               {todos.map((todo, index) => (
-                <li key={index} className="todo-list__item">
+                <li key={index} className="todo-list-item">
                   <span>{todo}</span>
                   <button
-                    className="todo-list__remove-btn"
+                    className="todo-list-remove-btn"
                     onClick={() => handleRemoveTodo(index)}
                   >
                     ✔
@@ -75,16 +75,16 @@ const TodoList = () => {
                 </li>
               ))}
             </ul>
-            <div className="todo-list__input-container">
+            <div className="todo-list-input-container">
               <input
-                className="todo-list__input"
+                className="todo-list-input"
                 type="text"
                 placeholder="Add a todo..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
               />
-              <button className="todo-list__add-btn" onClick={handleAddTodo}>
-                Add
+              <button className="todo-list-add-btn" onClick={handleAddTodo}>
+                <strong>ADD</strong>
               </button>
             </div>
           </div>

@@ -5,31 +5,7 @@
   align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #efead8;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
+/* Circle */
 
 .circle {
   background-color: white;
@@ -44,15 +20,6 @@
   z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Title */
 .title {
   font-family: "Montserrat", sans-serif;
@@ -65,17 +32,11 @@
   letter-spacing: 0.1rem;
 }
 
-/* Person */
-
-.person-image img {
-  max-width: 400px;
-}
-
 /* Pom Timer */
 
 .pom-container {
-  margin: 7rem;
   display: flex;
+  margin: 7rem;
   justify-content: center;
 }
 
@@ -110,7 +71,7 @@
 .main-todo-button,
 .main-note-button {
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
@@ -156,7 +117,7 @@
   right: 40px;
   width: 300px;
   height: 400px;
-  background-color: #b5b8b1;
+  background-color: #efead8;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -171,17 +132,17 @@
   display: flex;
 }
 
-.todo-list__header {
+.todo-list-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   padding: 0 10px;
   color: #fff;
-  background-color: #0a2342;
+  background-color: #2a3b3d;
 }
 
-.todo-list__close-btn {
+.todo-list-close-btn {
   font-size: 15px;
   cursor: pointer;
   border: none;
@@ -189,18 +150,18 @@
   color: #fff;
 }
 
-.todo-list__content {
+.todo-list-content {
   height: calc(100% - 50px);
   overflow-y: auto;
 }
 
-.todo-list__items {
+.todo-list-items {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.todo-list__item {
+.todo-list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -208,11 +169,11 @@
   border-bottom: 1px solid #ddd;
 }
 
-.todo-list__item:last-child {
+.todo-list-item:last-child {
   border-bottom: none;
 }
 
-.todo-list__remove-btn {
+.todo-list-remove-btn {
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -220,14 +181,14 @@
   color: #5f7161;
 }
 
-.todo-list__input-container {
+.todo-list-input-container {
   display: flex;
   align-items: center;
   padding: 10px;
   border-top: 1px solid #ddd;
 }
 
-.todo-list__input {
+.todo-list-input {
   flex: 1;
   height: 30px;
   padding: 5px;
@@ -236,13 +197,14 @@
   background-color: #fff;
 }
 
-.todo-list__add-btn {
+.todo-list-add-btn {
   height: 30px;
   padding: 5px 10px;
   border: none;
   background-color: #333;
   color: white;
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 /* bounce person */
@@ -254,16 +216,9 @@
   animation-iteration-count: infinite;
 }
 
-@keyframes bounce {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 30px, 0);
-  }
+.person-image img {
+  max-width: 400px;
 }
-
-/* Prefix Support */
 
 .person-image {
   -webkit-animation-name: bounce;
@@ -271,6 +226,15 @@
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: cubic-bezier(1, 1, 1, 1);
   -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 30px, 0);
+  }
 }
 
 @-webkit-keyframes bounce {
@@ -299,13 +263,13 @@
   transform: translate(-50%, -50%);
   width: 300px;
   height: 300px;
-  background-color: #907474;
+  background-color: #efead8;
   border-radius: 2rem;
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px;
 }
 
-.note__text {
+.note-text {
   width: 245px;
   height: 70%;
   padding: 10px;
@@ -313,7 +277,7 @@
   top: 50px;
   left: 20px;
   border: none;
-  color: #fff;
+  color: #2a3b3d;
   background-color: transparent;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -327,7 +291,7 @@ div.note textarea:focus {
 div.note button.close-button {
   background: none;
   border: none;
-  color: white;
+  color: #5f7161;
   position: absolute;
   left: 257px;
   top: 18px;
@@ -338,6 +302,17 @@ div.note button.close-button {
 @media (max-width: 480px) {
   .pomodoro-timer {
     width: 300px;
+  }
+  .pom-container {
+    margin: 7rem;
+  }
+  .todo-button {
+    bottom: 487px;
+    left: 80px;
+  }
+  .note-button {
+    bottom: 435px;
+    right: 75px;
   }
   .circle {
     bottom: 50%;

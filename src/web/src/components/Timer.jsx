@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import BreakFace from '../assets/face2.png';
-import Face from '../assets/face01.png';
+import BreakFace from '../assets/c1-break.png';
+import Face from '../assets/c1-normal.png';
 import TimerSound from '../assets/timer-done.mp3';
 
 
-const Timer = ({ onComplete, setIsBreak, setImageSrc }) => {
+const Timer = ({ onComplete, setIsBreak, setImageSrc, setBreakImg }) => {
   const [seconds, setSeconds] = useState(1500);
   const [isRunning, setIsRunning] = useState(false);
   const hasPlayedSoundRef = useRef(false);

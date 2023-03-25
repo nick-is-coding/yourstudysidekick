@@ -1,0 +1,79 @@
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  color: #2a3b3d;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+}
+
+.character-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.characters {
+  display: flex;
+}
+
+.characters img {
+  width: 300px;
+}
+
+.character-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #b2675e;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  margin: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.character-box:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #efead8;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.select-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-box p {
+  color: #2a3b3d;
+  font-size: 2rem;
+  width: 300px;
+  text-align: center;
+}
+
+.confirm-button {
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #b2675e;
+  color: #efead8;
+  padding: 15px 30px;
+}
+
+.confirm-button:hover {
+  background-color: #d09d97;
+}

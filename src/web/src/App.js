@@ -5,9 +5,13 @@ import Timer from './components/Timer';
 import Note from './components/Note';
 import TodoWindow from './components/TodoWindow';
 
-import Face from './assets/face01.png';
-import BreakFace from './assets/face2.png';
-import CheerFace from './assets/face3.png';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import LoginPage from "./components/LoginPage";
+
+import Face from './assets/c1-normal.png';
+import BreakFace from './assets/c1-break.png';
+import CheerFace from './assets/c1-cheer.png';
 
 import './App.css';
 
@@ -26,23 +30,32 @@ function App() {
   
 
   return (
-    <div className="App">
-      <div className='circle'></div>
-      <h1 className="title">STUDY BUDDY</h1>
-      <Person
-        imageSrc={imageSrc}
-      />
-      <Timer
-        onComplete={handleTimerComplete}
-        setIsBreak={setIsBreak}
-        setImageSrc={setImageSrc}
-        isBreak={isBreak}
-      />
-      <div>
-        <Note/>
-        <TodoWindow/>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/login'>
+        <div>
+          <LoginPage/>
+        </div>
+        </Route>
+        <Route path='/main'>
+          <div className="App">
+            <div className='circle'></div>
+            <h1 className="title">STUDY BUDDY</h1>
+            <Person
+              imageSrc={imageSrc}
+            />
+            <Timer
+              onComplete={handleTimerComplete}
+              setIsBreak={setIsBreak}
+              setImageSrc={setImageSrc}
+              isBreak={isBreak}
+            />
+              <Note/>
+              <TodoWindow/>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
