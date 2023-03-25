@@ -13,16 +13,23 @@ const App = () => {
   const [isBreak, setIsBreak] = useState(false);
 
   const handleTimerComplete = (isBreak) => {
-    const defaultCharacter = characters.find((char) => char.id === localStorage.getItem("selectedCharacter"));
+    const selectedCharacter = JSON.parse(localStorage.getItem("selectedCharacter"));
+    const character = characters.find(char => char.id === selectedCharacter);
+    setCharacterInfo({
+      name: character.name,
+      image: character.break,
+    });
+
+    console.log(selectedCharacter);
     if (isBreak) {
       setCharacterInfo({
-        name: defaultCharacter.name,
-        image: defaultCharacter.break
+        name: character.name,
+        image: character.break
       });
     } else {
       setCharacterInfo({
-        name: defaultCharacter.name,
-        image: defaultCharacter.normal
+        name: character.name,
+        image: character.cheer
       });
     }
     setIsBreak(isBreak);

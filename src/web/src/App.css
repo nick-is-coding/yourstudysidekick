@@ -308,6 +308,9 @@ div.note button.close-button {
   .pom-container {
     margin: 7rem;
   }
+  .person-image {
+    margin-top: -140px;
+  }
   .todo-button {
     bottom: 487px;
     left: 80px;

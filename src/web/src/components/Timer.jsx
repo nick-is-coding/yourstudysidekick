@@ -35,9 +35,7 @@ const Timer = ({ onComplete, setIsBreak, setCharacterInfo, characterInfo, isBrea
     setSeconds(300);
     setIsBreak(true);
     const selectedCharacter = JSON.parse(localStorage.getItem("selectedCharacter"));
-    console.log(selectedCharacter);
     const character = characters.find(char => char.id === selectedCharacter);
-    console.log(character);
     setCharacterInfo({
       name: character.name,
       image: character.break,
@@ -50,9 +48,7 @@ const Timer = ({ onComplete, setIsBreak, setCharacterInfo, characterInfo, isBrea
     setSeconds(1500);
     setIsBreak(false);
     const selectedCharacter = JSON.parse(localStorage.getItem("selectedCharacter"));
-    console.log(selectedCharacter);
     const character = characters.find(char => char.id === selectedCharacter);
-    console.log(character);
     setCharacterInfo({
       name: character.name,
       image: character.normal,
