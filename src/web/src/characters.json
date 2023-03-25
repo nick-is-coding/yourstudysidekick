@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Study Buddy 1",
+    "normal": "c1-normal.png",
+    "break": "c1-break.png",
+    "cheer": "c1-cheer.png"
+  },
+  {
+    "id": 2,
+    "name": "Study Buddy 2",
+    "normal": "c2-normal.png",
+    "break": "c2-break.png",
+    "cheer": "c2-cheer.png"
+  },
+  {
+    "id": 3,
+    "name": "Study Buddy 3",
+    "normal": "c3-normal.png",
+    "break": "c3-break.png",
+    "cheer": "c3-cheer.png"
+  }
+]

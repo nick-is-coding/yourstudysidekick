@@ -1,62 +1,62 @@
 import React, { useState } from "react";
-
-import Person from './components/Person';
-import Timer from './components/Timer';
-import Note from './components/Note';
-import TodoWindow from './components/TodoWindow';
-
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
+import Person from "./components/Person";
+import Timer from "./components/Timer";
+import Note from "./components/Note";
+import TodoWindow from "./components/TodoWindow";
+import characters from "./components/characters";
+import "./App.css";
 
-import Face from './assets/c1-normal.png';
-import BreakFace from './assets/c1-break.png';
-import CheerFace from './assets/c1-cheer.png';
-
-import './App.css';
-
-function App() {
-  const [imageSrc, setImageSrc] = useState(Face);
+const App = () => {
+  const [characterInfo, setCharacterInfo] = useState({});
   const [isBreak, setIsBreak] = useState(false);
 
   const handleTimerComplete = (isBreak) => {
+    const defaultCharacter = characters.find((char) => char.id === localStorage.getItem("selectedCharacter"));
     if (isBreak) {
-      setImageSrc(BreakFace);
+      setCharacterInfo({
+        name: defaultCharacter.name,
+        image: defaultCharacter.break
+      });
     } else {
-      setImageSrc(CheerFace);
+      setCharacterInfo({
+        name: defaultCharacter.name,
+        image: defaultCharacter.normal
+      });
     }
-    setIsBreak(prevIsBreak => !prevIsBreak);
+    setIsBreak(isBreak);
   };
-  
 
   return (
     <Router>
       <Switch>
-        <Route path='/login'>
-        <div>
-          <LoginPage/>
-        </div>
+        <Route exact path="/">
+          <Redirect to="/login" />
         </Route>
-        <Route path='/main'>
+        <Route path="/login">
+          <LoginPage setCharacterInfo={setCharacterInfo} characters={characters} />
+        </Route>
+        <Route path="/main">
           <div className="App">
-            <div className='circle'></div>
+            <div className="circle"></div>
             <h1 className="title">STUDY BUDDY</h1>
-            <Person
-              imageSrc={imageSrc}
-            />
+            <Person characterInfo={characterInfo} />
             <Timer
               onComplete={handleTimerComplete}
               setIsBreak={setIsBreak}
-              setImageSrc={setImageSrc}
+              setCharacterInfo={setCharacterInfo}
+              characterInfo={characterInfo}
+              setBreakImg={setCharacterInfo}
               isBreak={isBreak}
             />
-              <Note/>
-              <TodoWindow/>
+            <Note />
+            <TodoWindow />
           </div>
         </Route>
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import BreakFace from '../assets/c1-break.png';
-import Face from '../assets/c1-normal.png';
 import TimerSound from '../assets/timer-done.mp3';
+import characters from './characters';
 
 
-const Timer = ({ onComplete, setIsBreak, setImageSrc, setBreakImg }) => {
+const Timer = ({ onComplete, setIsBreak, setCharacterInfo, characterInfo, isBreak }) => {
   const [seconds, setSeconds] = useState(1500);
   const [isRunning, setIsRunning] = useState(false);
   const hasPlayedSoundRef = useRef(false);
@@ -15,7 +14,7 @@ const Timer = ({ onComplete, setIsBreak, setImageSrc, setBreakImg }) => {
       intervalId = setInterval(() => setSeconds(prevSeconds => prevSeconds - 1), 1000);
     } else if (seconds === 0 && !hasPlayedSoundRef.current) {
       clearInterval(intervalId);
-      onComplete();
+      onComplete(isBreak);
       const audio = new Audio(TimerSound);
       audio.play();
       hasPlayedSoundRef.current = true;
@@ -25,28 +24,42 @@ const Timer = ({ onComplete, setIsBreak, setImageSrc, setBreakImg }) => {
       });
     }
     return () => clearInterval(intervalId);
-  }, [isRunning, seconds, onComplete]);
-
+  }, [isRunning, seconds, onComplete, isBreak]);
 
   const handleStartStop = () => {
     setIsRunning(prevIsRunning => !prevIsRunning);
-  };
-
-  const handleReset = () => {
-    setIsRunning(false);
-    setSeconds(1500);
-    setIsBreak(false);
-    setImageSrc(Face);
-    hasPlayedSoundRef.current = false;
   };
 
   const takeBreak = () => {
     setIsRunning(false);
     setSeconds(300);
     setIsBreak(true);
-    setImageSrc(BreakFace);
+    const selectedCharacter = JSON.parse(localStorage.getItem("selectedCharacter"));
+    console.log(selectedCharacter);
+    const character = characters.find(char => char.id === selectedCharacter);
+    console.log(character);
+    setCharacterInfo({
+      name: character.name,
+      image: character.break,
+    });
     hasPlayedSoundRef.current = false;
-  }
+  };
+  
+  const handleReset = () => {
+    setIsRunning(false);
+    setSeconds(1500);
+    setIsBreak(false);
+    const selectedCharacter = JSON.parse(localStorage.getItem("selectedCharacter"));
+    console.log(selectedCharacter);
+    const character = characters.find(char => char.id === selectedCharacter);
+    console.log(character);
+    setCharacterInfo({
+      name: character.name,
+      image: character.normal,
+    });
+    hasPlayedSoundRef.current = false;
+  };
+  
 
   const formattedTime = new Date(seconds * 1000).toISOString().substr(14, 5);
 
