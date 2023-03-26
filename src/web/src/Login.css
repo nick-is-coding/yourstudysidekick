@@ -7,6 +7,7 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   letter-spacing: 0.1rem;
+  text-align: center;
 }
 
 .character-container {
@@ -90,4 +91,48 @@
 
 .confirm-button:hover {
   background-color: #d09d97;
+}
+
+@media (max-width: 1200px) {
+  .characters img {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .characters img {
+    width: 15vw;
+  }
+  .character-box {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .characters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: none;
+  }
+  .arrow-button-left,
+  .arrow-button-right {
+    position: relative;
+    bottom: -125px;
+  }
+  .arrow-button-right {
+    right: 140px;
+  }
+  .arrow-button-left {
+    left: 140px;
+  }
+  .characters img {
+    width: 90px;
+  }
+  .character-box {
+    margin: 0.5rem;
+  }
+  .select-box {
+    padding: 80px;
+  }
 }
