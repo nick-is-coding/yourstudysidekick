@@ -11,7 +11,7 @@ const characters = [
     name: "Study Buddy 2",
     normal: require("../assets/c2-normal.png"),
     break: require("../assets/c2-break.png"),
-    cheer: require("../assets/c1-cheer.png"),
+    cheer: require("../assets/c2-cheer.png"),
   },
   {
     id: 3,

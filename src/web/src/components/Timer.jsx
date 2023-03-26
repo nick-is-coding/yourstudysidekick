@@ -4,7 +4,7 @@ import characters from './characters';
 
 
 const Timer = ({ onComplete, setIsBreak, setCharacterInfo, characterInfo, isBreak }) => {
-  const [seconds, setSeconds] = useState(1500);
+  const [seconds, setSeconds] = useState(1);
   const [isRunning, setIsRunning] = useState(false);
   const hasPlayedSoundRef = useRef(false);
 
