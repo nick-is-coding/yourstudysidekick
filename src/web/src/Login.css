@@ -16,7 +16,7 @@
 
 .top-banner {
   background-color: #768377;
-  height: 400px;
+  height: 394px;
   width: 100%;
   z-index: -10;
   position: absolute;
@@ -32,13 +32,12 @@
 
 .characters {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .characters img {
-  width: 300px;
+  width: 280px;
 }
 
 .character-box {
@@ -83,14 +82,14 @@ span.p-1 {
 
 .select-box {
   color: #efead8;
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 443px;
   text-align: center;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 .select-box p {
@@ -119,7 +118,10 @@ span.p-1 {
 
 @media (max-width: 1200px) {
   .characters img {
-    width: 20vw;
+    width: 16vw;
+  }
+  .top-banner {
+    height: 324px;
   }
 }
 

@@ -45,7 +45,7 @@
 
 .title {
   font-family: "Open Sans", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #2a3b3d;
   text-transform: uppercase;
   display: inline-block;
@@ -59,7 +59,7 @@
 
 .pom-container {
   display: flex;
-  margin: 7rem;
+  margin: 5rem;
   justify-content: center;
 }
 
@@ -69,9 +69,9 @@
   align-items: center;
   justify-content: center;
   color: var(--main-light);
-  height: 250px;
+  height: 225px;
   background: var(--main-red);
-  width: 500px;
+  width: 450px;
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -123,15 +123,15 @@
 .main-note-button {
   background-color: var(--main-light);
   color: var(--main-red);
-  padding: 15px 16px;
+  padding: 15px 12px;
 }
 
 /* TodoWindow */
 
 .todo-button {
   position: relative;
-  bottom: 315px;
-  left: 180px;
+  bottom: 270px;
+  left: 175px;
 }
 
 .todo-list {
@@ -241,7 +241,7 @@
 }
 
 .person-image img {
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .person-image {
@@ -276,8 +276,8 @@
 
 .note-button {
   position: relative;
-  bottom: 262px;
-  right: 180px;
+  bottom: 218px;
+  right: 175px;
 }
 
 .note {
@@ -344,38 +344,57 @@ div.note button.close-button {
   .note-button {
     display: none;
   }
-  .todo-button {
-    bottom: 400px;
-    left: 0px;
-  }
-  .todo-list {
-    top: 955px;
-    right: 328px;
+  div.todo-button {
+    display: none;
   }
 }
 
 /* Media Query */
 
 @media (max-width: 480px) {
+  @keyframes bounce {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 15px, 0);
+    }
+  }
+
+  @-webkit-keyframes bounce {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      -webkit-transform: translate3d(0, 50px, 0);
+      transform: translate3d(0, 50px, 0);
+    }
+  }
   .pomodoro-timer {
     width: 300px;
   }
   .pom-container {
-    margin: 7rem;
+    margin: 5rem;
   }
   .person-image {
-    margin-top: -140px;
+    margin-top: -90px;
   }
-  .todo-button {
-    bottom: 407px;
-    left: 0px;
+  .person-image img {
+    max-width: 350px;
+  }
+  div.todo-button {
+    display: none;
   }
   .note-button {
     display: none;
   }
   .todo-list {
-    top: 955px;
-    right: 328px;
+    top: 900px;
+    right: 250px;
+  }
+  .select-box {
+    width: 320px;
   }
   .note {
     position: absolute;
@@ -384,6 +403,7 @@ div.note button.close-button {
   }
   .circle {
     bottom: 50%;
+    position: absolute;
   }
   .option-add-button {
     height: 7vw;

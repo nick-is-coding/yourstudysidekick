@@ -9,7 +9,7 @@ const GoBack = () => {
 
   return (
     <>
-      <button className="goback-button" onClick={goBack}><strong>RE-PICK YOUR SIDEKICK</strong></button>
+      <button className="goback-button" onClick={goBack}><strong>CLICK TO RE-PICK YOUR SIDEKICK</strong></button>
     </>
   );
 };
