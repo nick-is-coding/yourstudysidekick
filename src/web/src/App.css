@@ -1,3 +1,13 @@
+:root {
+  --main-green: #5f7161;
+  --main-light: #efead8;
+  --white: #fff;
+  --black: #000000;
+  --main-red: #b2675e;
+  --light-red: ##d09d97;
+  --title-color: #2a3b3d;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -9,7 +19,7 @@
 /* Circle */
 
 .circle {
-  background-color: white;
+  background-color: var(--white);
   position: fixed;
   width: 150vw;
   bottom: 20%;
@@ -20,16 +30,19 @@
   z-index: -1;
 }
 
+/* Go Back Button */
+
 .goback-button {
   position: absolute;
   width: 100%;
   height: 4vh;
-  background: #b2675e;
+  background: var(--main-red);
   border: none;
-  color: #efead8;
+  color: var(--main-light);
 }
 
 /* Title */
+
 .title {
   font-family: "Open Sans", sans-serif;
   font-size: 3rem;
@@ -55,9 +68,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #efead8;
+  color: var(--main-light);
   height: 250px;
-  background: #b2675e;
+  background: var(--main-red);
   width: 500px;
   border-radius: 2rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -90,26 +103,26 @@
 
 .timer-button,
 .todo-list__add-btn {
-  background-color: #b2675e;
-  color: #efead8;
+  background-color: var(--main-red);
+  color: var(--main-light);
   padding: 15px 30px;
 }
 
 .timer-button:hover,
 .todo-list__add-btn:hover {
-  background-color: #d09d97;
+  background-color: var(--light-red);
 }
 
 .main-todo-button:hover,
 .main-note-button:hover {
-  background-color: #d09d97;
-  color: #efead8;
+  background-color: var(--light-red);
+  color: var(--main-light);
 }
 
 .main-todo-button,
 .main-note-button {
-  background-color: #efead8;
-  color: #b2675e;
+  background-color: var(--main-light);
+  color: var(--main-red);
   padding: 15px 16px;
 }
 
@@ -127,7 +140,7 @@
   right: 40px;
   width: 300px;
   height: 400px;
-  background-color: #efead8;
+  background-color: var(--main-light);
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -148,7 +161,7 @@
   align-items: center;
   height: 50px;
   padding: 0 10px;
-  color: #fff;
+  color: var(--white);
   background-color: #2a3b3d;
 }
 
@@ -157,7 +170,7 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  color: #fff;
+  color: var(--white);
 }
 
 .todo-list-content {
@@ -204,7 +217,7 @@
   padding: 5px;
   margin-right: 10px;
   border: none;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .todo-list-add-btn {
@@ -212,12 +225,12 @@
   padding: 5px 10px;
   border: none;
   background-color: #333;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   border-radius: 0.25rem;
 }
 
-/* bounce person */
+/* Character Bounce */
 
 .person-image {
   animation: bounce 0.9s;
@@ -274,9 +287,9 @@
   transform: translate(-50%, -50%);
   width: 300px;
   height: 300px;
-  background-color: #efead8;
+  background-color: var(--main-light);
   border-radius: 2rem;
-  color: #fff;
+  color: var(--white);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 6px;
 }
 
@@ -300,7 +313,7 @@
   background: none;
   font-size: 30px;
   border: none;
-  color: #5f7161;
+  color: var(--main-green);
   top: 11px;
   left: 214px;
 }
@@ -320,7 +333,7 @@ div.note textarea:focus {
 div.note button.close-button {
   background: none;
   border: none;
-  color: #5f7161;
+  color: var(--main-green);
   position: absolute;
   left: 250px;
   top: 10px;
