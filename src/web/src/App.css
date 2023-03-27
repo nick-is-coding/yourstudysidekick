@@ -12,13 +12,21 @@
   background-color: white;
   position: fixed;
   width: 150vw;
-  right: -25%;
-  bottom: 30%;
+  bottom: 20%;
   height: 150vw;
   transform: rotate(90deg);
   border-radius: 154rem;
   color: black;
   z-index: -1;
+}
+
+.goback-button {
+  position: absolute;
+  width: 100%;
+  height: 4vh;
+  background: #b2675e;
+  border: none;
+  color: #efead8;
 }
 
 /* Title */
@@ -31,6 +39,7 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   letter-spacing: 0.1rem;
+  margin-top: 3.5rem;
 }
 
 /* Pom Timer */
@@ -286,6 +295,24 @@
   line-height: 1.5;
 }
 
+.collapse-button {
+  position: absolute;
+  background: none;
+  font-size: 30px;
+  border: none;
+  color: #5f7161;
+  top: 11px;
+  left: 214px;
+}
+
+.note--collapsed {
+  height: 60px;
+}
+
+.note-buttons {
+  display: flex;
+}
+
 div.note textarea:focus {
   outline: none;
 }
@@ -295,8 +322,23 @@ div.note button.close-button {
   border: none;
   color: #5f7161;
   position: absolute;
-  left: 257px;
-  top: 18px;
+  left: 250px;
+  top: 10px;
+  font-size: 28px;
+}
+
+@media (max-width: 700px) {
+  .note-button {
+    display: none;
+  }
+  .todo-button {
+    bottom: 400px;
+    left: 0px;
+  }
+  .todo-list {
+    top: 955px;
+    right: 328px;
+  }
 }
 
 /* Media Query */
@@ -312,12 +354,20 @@ div.note button.close-button {
     margin-top: -140px;
   }
   .todo-button {
-    bottom: 487px;
-    left: 80px;
+    bottom: 407px;
+    left: 0px;
   }
   .note-button {
-    bottom: 435px;
-    right: 75px;
+    display: none;
+  }
+  .todo-list {
+    top: 955px;
+    right: 328px;
+  }
+  .note {
+    position: absolute;
+    bottom: 400px;
+    left: 200px;
   }
   .circle {
     bottom: 50%;

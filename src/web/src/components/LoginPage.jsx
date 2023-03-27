@@ -15,6 +15,7 @@ const LoginPage = ({ history, setCharacterInfo, characters }) => {
   const handleConfirm = () => {
     if (selectedCharacter) {
       localStorage.setItem("selectedCharacter", selectedCharacter);
+      localStorage.setItem("isLoggedIn", true);
       const defaultCharacter = characters.find((char) => char.id === selectedCharacter);
       setCharacterInfo({
         name: defaultCharacter.name,
@@ -24,7 +25,6 @@ const LoginPage = ({ history, setCharacterInfo, characters }) => {
       history.push("/main");
     }
   };
-
   const handleLeftArrowClick = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? characters.length - 1 : prevIndex - 1));
   };

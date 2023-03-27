@@ -6,6 +6,7 @@ import Timer from "./components/Timer";
 import Note from "./components/Note";
 import TodoWindow from "./components/TodoWindow";
 import characters from "./components/characters";
+import GoBack from "./components/GoBack";
 import "./App.css";
 
 const App = () => {
@@ -39,7 +40,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Redirect to="/login" />
+        {localStorage.getItem('isLoggedIn') ? <Redirect to="/main" /> : <Redirect to="/login" />}
         </Route>
         <Route path="/login">
           <LoginPage setCharacterInfo={setCharacterInfo} characters={characters} />
@@ -48,6 +49,7 @@ const App = () => {
           <div className="App">
             <div className="circle"></div>
             <h1 className="title">STUDY SIDEKICK</h1>
+            <GoBack/>
             <Person characterInfo={characterInfo} />
             <Timer
               onComplete={handleTimerComplete}
