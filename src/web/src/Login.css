@@ -1,13 +1,26 @@
-.title {
-  font-family: "Montserrat", sans-serif;
+.body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.login-title {
+  font-family: "Open Sans", sans-serif;
   font-size: 3rem;
-  color: #2a3b3d;
+  color: #efead8;
   text-transform: uppercase;
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   letter-spacing: 0.1rem;
   text-align: center;
+}
+
+.top-banner {
+  background-color: #768377;
+  height: 400px;
+  width: 100%;
+  z-index: -10;
+  position: absolute;
+  top: 0;
 }
 
 .character-container {
@@ -47,7 +60,7 @@
 
 .arrow-button-left,
 .arrow-button-right {
-  background: white;
+  background: #efead8;
   border: none;
   border-radius: 0.5rem;
   font-size: 18px;
@@ -55,6 +68,10 @@
   transition: background-color 0.3s ease;
   color: #2a3b3d;
   padding: 12px 15px;
+}
+
+span.p-1 {
+  color: #d4aa5c;
 }
 
 .selected {
@@ -65,15 +82,21 @@
 }
 
 .select-box {
+  color: #efead8;
+  font-size: 2rem;
+  width: 443px;
+  text-align: center;
   display: flex;
+  text-align: center;
   flex-direction: column;
-  padding: 32px;
+  align-items: center;
+  margin-top: 3.5rem;
 }
 
 .select-box p {
-  color: #2a3b3d;
+  color: #efead8;
   font-size: 2rem;
-  width: 300px;
+  width: 400px;
   text-align: center;
 }
 
@@ -87,6 +110,7 @@
   background-color: #b2675e;
   color: #efead8;
   padding: 15px 30px;
+  margin-top: 1.5rem;
 }
 
 .confirm-button:hover {

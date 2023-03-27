@@ -45,7 +45,8 @@ const LoginPage = ({ history, setCharacterInfo, characters }) => {
 
   return (
     <div className="character-container">
-      <h2 className="title">Pick Your Study Buddy</h2>
+      <h2 className="login-title">Pick Your SideKick</h2>
+      <div className="top-banner"></div>
       <div className="characters">
         <button className="arrow-button-left" onClick={handleLeftArrowClick}>
           {"<"}
@@ -66,7 +67,11 @@ const LoginPage = ({ history, setCharacterInfo, characters }) => {
       {selectedCharacter && (
         <div className="select-box">
           <strong>
-            <p>WILL THIS BE YOUR BUDDY OF STUDY?</p>
+            <span>Will </span>
+            <span className="p-1">
+              {characters.find(char => char.id === selectedCharacter)?.name}
+            </span>  
+            <span> be the sidekick to help you on your focus journey?</span>
           </strong>
           <button className="confirm-button" onClick={handleConfirm}>
             YES

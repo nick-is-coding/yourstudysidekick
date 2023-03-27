@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/main">
           <div className="App">
             <div className="circle"></div>
-            <h1 className="title">STUDY BUDDY</h1>
+            <h1 className="title">STUDY SIDEKICK</h1>
             <Person characterInfo={characterInfo} />
             <Timer
               onComplete={handleTimerComplete}
